@@ -129,7 +129,7 @@ const PostJob: React.FC = () => {
                 id="salary"
                 value={salary}
                 onChange={(e) => setSalary(e.target.value)}
-                placeholder="e.g., $100,000 - $130,000"
+                placeholder="e.g., Rs.1,00,000 - Rs.1,30,000"
                 className="job-form-input"
               />
             </div>
