@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* We'll keep the light theme definitions for reference, but make dark theme the default */
+    --background: 260 15% 10%;
+    --foreground: 270 100% 98%;
+
+    --card: 260 15% 12%;
+    --card-foreground: 270 100% 98%;
+
+    --popover: 260 15% 12%;
+    --popover-foreground: 270 100% 98%;
+
+    --primary: 265 84% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 20% 20%;
+    --secondary-foreground: 270 100% 98%;
+
+    --muted: 260 20% 20%;
+    --muted-foreground: 270 10% 80%;
+
+    --accent: 265 84% 61%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 15% 20%;
+    --input: 260 15% 20%;
+    --ring: 265 84% 61%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 260 20% 8%;
+    --sidebar-foreground: 270 100% 98%;
+    --sidebar-primary: 265 84% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 20% 15%;
+    --sidebar-accent-foreground: 270 100% 98%;
+    --sidebar-border: 260 20% 15%;
+    --sidebar-ring: 265 84% 61%;
+  }
+
+  .light {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 265 84% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 265 84% 61%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 265 84% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 265 84% 61%;
+  }
+
+  .dark {
+    --background: 260 15% 10%;
+    --foreground: 270 100% 98%;
+
+    --card: 260 15% 12%;
+    --card-foreground: 270 100% 98%;
+
+    --popover: 260 15% 12%;
+    --popover-foreground: 270 100% 98%;
+
+    --primary: 265 84% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 20% 20%;
+    --secondary-foreground: 270 100% 98%;
+
+    --muted: 260 20% 20%;
+    --muted-foreground: 270 10% 80%;
+
+    --accent: 265 84% 61%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 15% 20%;
+    --input: 260 15% 20%;
+    --ring: 265 84% 61%;
+
+    --sidebar-background: 260 20% 8%;
+    --sidebar-foreground: 270 100% 98%;
+    --sidebar-primary: 265 84% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 20% 15%;
+    --sidebar-accent-foreground: 270 100% 98%;
+    --sidebar-border: 260 20% 15%;
+    --sidebar-ring: 265 84% 61%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Force dark mode by default */
+  html {
+    @apply dark;
+  }
+}
+
+/* Custom styles for job portal with neon and purple theme */
+@layer components {
+  .job-card {
+    @apply rounded-lg border border-job-purple-700/50 bg-background p-6 shadow-sm;
+    @apply transition-all hover:border-job-purple-500 hover:shadow-md hover:shadow-job-purple-500/20;
+  }
+  
+  .badge {
+    @apply inline-block rounded-full px-3 py-1 text-xs font-medium;
+  }
+  
+  .badge-blue {
+    @apply badge bg-job-neon-900/50 text-job-neon-400;
+  }
+  
+  .badge-gray {
+    @apply badge bg-job-neutral-800/50 text-job-neutral-300;
+  }
+
+  /* Neon effects */
+  .neon-text {
+    @apply text-job-neon-400;
+    text-shadow: 0 0 5px rgba(163, 112, 255, 0.2), 0 0 10px rgba(163, 112, 255, 0.1);
+  }
+
+  .neon-border {
+    @apply border border-job-purple-500;
+    box-shadow: 0 0 5px rgba(165, 110, 255, 0.2), 0 0 10px rgba(165, 110, 255, 0.1);
+  }
+
+  .neon-button {
+    @apply bg-white text-job-purple-600 rounded-md px-4 py-2 transition-all duration-300 ease-in-out;
+    @apply hover:bg-white hover:text-job-neon-400 hover:shadow-md hover:shadow-job-purple-500/20 hover:translate-y-[-1px];
+    @apply active:translate-y-[1px] active:shadow-sm active:shadow-job-purple-500/10;
+    @apply focus:outline-none focus:ring-2 focus:ring-job-neon-400/30 focus:ring-offset-1 focus:ring-offset-background;
+    @apply border border-job-purple-400;
+  }
+
+  /* Enhanced version with stronger glow effect for primary actions */
+  .enhanced-neon-button {
+    @apply bg-background text-job-neon-400 border border-job-neon-400 rounded-md px-4 py-2 transition-all duration-300 ease-in-out relative overflow-hidden;
+    @apply hover:bg-background hover:shadow-md hover:shadow-job-neon-400/20 hover:translate-y-[-1px];
+    @apply active:translate-y-[1px] active:shadow-sm active:shadow-job-neon-400/20;
+    @apply focus:outline-none focus:ring-2 focus:ring-job-neon-400/50 focus:ring-offset-1 focus:ring-offset-background;
+  }
+  
+  .enhanced-neon-button::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: radial-gradient(circle at center, rgba(163, 112, 255, 0.08) 0%, transparent 70%);
+  }
+  
+  .enhanced-neon-button:hover::before {
+    @apply opacity-50;
+  }
+  
+  
+
+  /* Gradient backgrounds */
+  .purple-gradient-bg {
+    @apply bg-purple-gradient;
+  }
+
+  .neon-gradient-bg {
+    @apply bg-neon-gradient;
+  }
+
+  .dark-gradient-bg {
+    @apply bg-dark-gradient;
+  }
+
+  /* Form styling */
+  .job-form-input {
+    @apply bg-background text-foreground border border-job-purple-700 rounded-md py-2 px-3 w-full;
+    @apply focus:outline-none focus:ring-2 focus:ring-job-neon-400/30 focus:border-job-neon-400;
+  }
+
+  .job-form-textarea {
+    @apply bg-background text-foreground border border-job-purple-700 rounded-md py-2 px-3 w-full min-h-[150px];
+    @apply focus:outline-none focus:ring-2 focus:ring-job-neon-400/30 focus:border-job-neon-400;
+  }
+
+  .job-form-select {
+    @apply bg-background text-foreground border border-job-purple-700 rounded-md py-2 px-3 w-full;
+    @apply focus:outline-none focus:ring-2 focus:ring-job-neon-400/30 focus:border-job-neon-400;
+    @apply appearance-none bg-no-repeat;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23A56EFF' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-size: 1.5em 1.5em;
+  }
+
+  /* Job listing styling */
+  .job-listing-item {
+    @apply border border-job-purple-700/50 rounded-lg p-4 bg-background;
+    @apply hover:border-job-purple-500 hover:shadow-md hover:shadow-job-purple-500/20 transition-all duration-300;
+  }
+
+  .job-listing-button {
+    @apply px-3 py-1.5 text-sm rounded-md transition-all duration-300 ease-in-out;
+    @apply hover:translate-y-[-1px] active:translate-y-[1px];
+  }
+}
