@@ -98,7 +98,7 @@ const PostJob: React.FC = () => {
                 id="location"
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                placeholder="e.g., San Francisco, CA or Remote"
+                placeholder="e.g., Delhi, Chennai or Remote"
                 required
                 className="job-form-input"
               />
