@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer, useEffect, ReactNode } fr
 import { AuthState, User, UserRole } from '@/types';
 import { toast } from 'sonner';
 
-const API_BASE_URL = 'https://job-portal-backend-4gm7.onrender.com';
+const API_BASE_URL = 'https://job-portal-backend-8goo.onrender.com';
 
 // Define actions
 type AuthAction =
