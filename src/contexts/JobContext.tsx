@@ -3,7 +3,7 @@ import { Job, JobFilters, PaginatedResponse } from '@/types';
 import { useAuth } from './AuthContext';
 import { toast } from 'sonner';
 
-const API_BASE_URL = 'https://job-portal-backend-4gm7.onrender.com';
+const API_BASE_URL = 'https://job-portal-backend-8goo.onrender.com';
 
 // Define the Job Context type
 interface JobContextType {
