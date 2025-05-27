@@ -5,7 +5,7 @@ import { useAuth } from './AuthContext';
 import { toast } from 'sonner';
 
 // API base URL
-const API_BASE_URL = 'https://job-portal-backend-4gm7.onrender.com';
+const API_BASE_URL = 'https://job-portal-backend-8goo.onrender.com';
 
 // Define the Application Context type
 interface ApplicationContextType {
